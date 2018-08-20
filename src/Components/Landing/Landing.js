@@ -8,6 +8,21 @@ export class Landing extends React.Component{
         super(props);
 
         this.state={}
+
+        this.handleRegisterButton = this.handleRegisterButton.bind(this);
+        this.handleSignInButton = this.handleSignInButton.bind(this);
+    }
+
+    handleRegisterButton(e){
+        e.preventDefault();
+
+        this.props.history.push('/register');
+    }
+
+    handleSignInButton(e) {
+        e.preventDefault();
+
+        this.props.history.push('/signin');
     }
 
     render(){
@@ -16,7 +31,7 @@ export class Landing extends React.Component{
                 <Header/>
                 <main className='landing-main'>
                     <div className='landing-btns'>
-                        <button>Register</button>
+                        <button onClick={(e)=>this.handleRegisterButton(e)}>Register</button>
                         <button>Sign In</button>
                     </div>
                 </main>
