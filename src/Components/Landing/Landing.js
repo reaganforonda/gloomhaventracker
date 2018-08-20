@@ -14,7 +14,9 @@ export class Landing extends React.Component{
         return (
             <div className='landing-container'>
                 <Header/>
-                Landing Container
+                <main className='landing-main'>
+                    Landing Main Content
+                </main>
                 <Footer/>
             </div>
         )
