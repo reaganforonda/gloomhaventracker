@@ -5,18 +5,20 @@ export class Footer extends React.Component{
     render(){
         return (
             <footer className='footer'>
-                <div className='footer-section'>
-                    <Link to='/dashboard'>Home</Link>
-                </div>
-                <div className='footer-section'>
-                    Party
-                </div>
-                <div className='footer-section'>
-                    Characters
-                </div>
-                <div className='footer-section'>
-                    Combat
-                </div>
+                <ul className='footer-menu'>
+                    <li className='footer-menu-item'>
+                        <Link to='/dashboard'>Home</Link>
+                    </li>
+                    <li className='footer-menu-item'>
+                        Party
+                    </li>
+                    <li className='footer-menu-item'>
+                        Characters
+                    </li>
+                    <li className='footer-menu-item'>
+                        Combat
+                    </li>
+                </ul>
             </footer>
         )
     }
