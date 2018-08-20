@@ -10,7 +10,7 @@ export class Footer extends React.Component{
                         <Link to='/dashboard'>Home</Link>
                     </li>
                     <li className='footer-menu-item'>
-                        <Link headerTitle={"Party"} to='/dashboard/party'>Party</Link>
+                        <Link to='/dashboard/party'>Party</Link>
                     </li>
                     <li className='footer-menu-item'>
                         Characters
