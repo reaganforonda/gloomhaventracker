@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import HamburgerMenu from './HamburgerMenu';
 
 export class Header extends React.Component{
     constructor(props){
@@ -11,11 +12,7 @@ export class Header extends React.Component{
     render(){
         return (
             <header className='header'>
-                <div className='hamburger-menu'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <HamburgerMenu/>
                 <div className='header-title'>
                     <h1>{this.props.headerTitle }</h1>
                 </div>
