@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 export class Register extends React.Component{
     constructor(props){
@@ -36,8 +37,12 @@ export class Register extends React.Component{
         const validForm = this.validateForm();
         
         if(validForm) {
-            console.log("Valid Form")
-            this.resetForm();
+            axios.post('/api/auth/register', user).then((result) => {
+                this.resetForm();
+                this.props.history.push('/dashboard');
+            }).catch((err) => {
+                console.log(err);
+            })
         } else {
             console.log("Not Valid");
         }
