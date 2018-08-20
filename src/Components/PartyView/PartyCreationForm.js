@@ -20,7 +20,6 @@ export class PartyCreationForm extends React.Component{
         return (
             <form className='player-create-form'>
                 <div className='player-create-form-row'>
-                    
                 </div>
                 <div className='player-create-form-row'>
                     Name: <input type='text' name='name'/>
