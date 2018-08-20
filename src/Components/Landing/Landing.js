@@ -15,7 +15,10 @@ export class Landing extends React.Component{
             <div className='landing-container'>
                 <Header/>
                 <main className='landing-main'>
-                    Landing Main Content
+                    <div className='landing-btns'>
+                        <button>Register</button>
+                        <button>Sign In</button>
+                    </div>
                 </main>
                 <Footer/>
             </div>
