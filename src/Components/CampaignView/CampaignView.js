@@ -14,11 +14,11 @@ export class CampaignView extends React.Component{
         return (
             <div className='campaign-view-container'>
                 <Header headerTitle={'Campaign'}/>
-                    <main className='campaign-view-main'>
-                        <div className='campaign-overview'>
-                            Campaign Overview View
-                        </div>
-                    </main>
+                <main className='campaign-view-main'>
+                    <div className='campaign-overview'>
+                        Campaign Overview View
+                    </div>
+                </main>
                 <Footer/>
             </div>
         )
