@@ -2,6 +2,8 @@ import React from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import PartyView from '../PartyView/PartyView';
+import { CampaignView } from '../CampaignView/CampaignView';
 
 export class Dashboard extends React.Component{
     constructor(props){
@@ -12,11 +14,12 @@ export class Dashboard extends React.Component{
     render(){
         return(
             <div className='dashboard'>
-                <Header/>
                 <main className='dashboard-main'>
-                    <Switch></Switch>
+                    <Switch>
+                        <Route path='/dashboard/party' component={PartyView}/>
+                        <Route path='/dashboard' component={CampaignView}/>
+                    </Switch>
                 </main>
-                <Footer/>
             </div>
         )
     }
