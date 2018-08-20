@@ -4,4 +4,9 @@
         flex-shrink: 0;
         height: 5%;
     }
+    
+    .footer-menu {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
