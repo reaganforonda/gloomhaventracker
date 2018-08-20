@@ -60,7 +60,6 @@ table {
   .landing-main {
     flex: 1 0 auto; } }
 
-/* DESKTOP */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .header {
     border: solid 2px blue;
