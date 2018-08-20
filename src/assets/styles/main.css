@@ -68,11 +68,7 @@ table {
     align-items: center;
     justify-content: center; }
   .header h1 {
-    text-align: center; }
-  .hamburger-menu {
-    height: 90%;
-    width: 5%;
-    border: solid 1px red; } }
+    text-align: center; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .footer {
