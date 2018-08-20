@@ -1,7 +1,5 @@
 import React from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import PartyView from '../PartyView/PartyView';
 import { CampaignView } from '../CampaignView/CampaignView';
 
