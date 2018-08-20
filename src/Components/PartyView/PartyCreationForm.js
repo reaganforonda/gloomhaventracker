@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 export class PartyCreationForm extends React.Component{
     constructor(props){
@@ -10,10 +11,30 @@ export class PartyCreationForm extends React.Component{
             location: '',
             reputation: ''
         }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInputChange(e) {
         this.setState({[e.target.name] : e.target.value})
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        let party = {
+            userID: 1, //TODO: Need Dynamic
+            name: this.state.name,
+            location: this.state.location,
+            reputation : this.state.reputation
+        }
+
+        axios.post('/api/party', party).then((result) => {
+            console.log(result);
+        }).catch((err) =>{
+            console.log(err);
+        })
     }
 
     render(){
