@@ -13,6 +13,9 @@ const {
     SECRET_SESSION
 } = process.env;
 
+massive(CONNECTION_STRING).then((dbInstance) => {
+    app.set('db', dbInstance);
+})
 
 app.use(bodyParser.json());
 app.use(cors());
