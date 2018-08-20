@@ -11,7 +11,12 @@ export class Header extends React.Component{
     render(){
         return (
             <header className='header'>
-                <h1>Gloomhaven Tracker</h1>
+                <div className='hamburger-menu'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <h1>Gloomhaven Manager</h1>
             </header>
         )
     }
