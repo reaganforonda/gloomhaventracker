@@ -109,3 +109,12 @@ table {
     background: black;
     margin: 3px 0;
     transition: 0.4s; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .campaign-view-container {
+    display: flex;
+    flex-direction: column; }
+  .campaign-view-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column; } }
