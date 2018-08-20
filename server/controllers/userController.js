@@ -28,5 +28,10 @@ module.exports = {
                 })
             }
         })
+    },
+
+    login: (req, res) => {
+        const db = req.app.get('db');
+        const {userName, pasword, confirmPassword} = req.body;
     }
 }
