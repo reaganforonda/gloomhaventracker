@@ -16,7 +16,12 @@ export class Header extends React.Component{
                     <div></div>
                     <div></div>
                 </div>
-                <h1>Gloomhaven Manager</h1>
+                <div className='header-title'>
+                    <h1>Gloomhaven Manager</h1>
+                </div>
+                <div className='header-button'>
+                    Button
+                </div>
             </header>
         )
     }
