@@ -58,7 +58,27 @@ table {
     display: flex;
     flex-direction: column; }
   .landing-main {
-    flex: 1 0 auto; } }
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
+  .landing-main h1 {
+    text-align: center; }
+  .landing-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto; }
+  .landing-btns button {
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid 1px red;
+    min-height: fit-content;
+    height: 30px;
+    text-transform: uppercase; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .header {
