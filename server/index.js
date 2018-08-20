@@ -8,5 +8,16 @@ const massive = require('massive');
 const app = express();
 
 const {
-
+    SERVER_PORT,
+    CONNECTION_STRING,
+    SECRET_SESSION
 } = process.env;
+
+
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static(`${__dirname}/../build`));
+
+app.listen(SERVER_PORT, ()=> {
+    console.log(`Creeping on: ${SERVER_PORT}`)
+})
