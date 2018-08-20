@@ -7,6 +7,7 @@ dotenv.config();
 const massive = require('massive');
 const app = express();
 const session = require('express-session')
+const userController = require('./controllers/userController')
 
 const {
     SERVER_PORT,
@@ -31,6 +32,9 @@ massive(CONNECTION_STRING).then((dbInstance) => {
 })
 
 /******** ENDPOINTS ********/
+
+// USER ENDPOINTS
+app.post('/api/auth/register', userController.register)
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
