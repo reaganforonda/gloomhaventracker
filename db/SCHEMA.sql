@@ -1,5 +1,7 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS achievements;
+DROP TABLE IF EXISTS party;
+DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
@@ -20,4 +22,13 @@ CREATE TABLE locations
     location_id SERIAL PRIMARY KEY,
     location_name VARCHAR(45),
     map_location VARCHAR(45)
+);
+
+CREATE TABLE parties
+(
+    party_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    party_name VARCHAR(45),
+    party_location VARCHAR(75),
+    party_gold INTEGER
 );
