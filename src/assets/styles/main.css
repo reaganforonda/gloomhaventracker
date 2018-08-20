@@ -120,3 +120,9 @@ table {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .header-btn button {
+    min-width: fit-content;
+    width: 75px;
+    border: solid 1px green; } }
