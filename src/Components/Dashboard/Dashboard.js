@@ -1,6 +1,7 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-
+import {Switch, Route, withRouter} from 'react-router-dom';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 export class Dashboard extends React.Component{
     constructor(props){
@@ -11,7 +12,11 @@ export class Dashboard extends React.Component{
     render(){
         return(
             <div className='dashboard'>
-            
+                <Header/>
+                <main className='dashboard-main'>
+                    <Switch></Switch>
+                </main>
+                <Footer/>
             </div>
         )
     }
