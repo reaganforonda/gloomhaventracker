@@ -17,7 +17,7 @@ export class Header extends React.Component{
                 <div className='header-title'>
                     <h1>{this.props.headerTitle }</h1>
                 </div>
-                <HeaderButton btn={this.props.btn}/>
+                <HeaderButton clickBtn={this.props.clickBtn} btn={this.props.btn}/>
             </header>
         )
     }
