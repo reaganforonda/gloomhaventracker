@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 export class PartyCreationForm extends React.Component{
     constructor(props){
@@ -14,6 +15,7 @@ export class PartyCreationForm extends React.Component{
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     handleInputChange(e) {
@@ -32,8 +34,17 @@ export class PartyCreationForm extends React.Component{
 
         axios.post('/api/party', party).then((result) => {
             console.log(result);
+            this.resetForm();
         }).catch((err) =>{
             console.log(err);
+        })
+    }
+
+    resetForm(){
+        this.setState({
+            name: '',
+            location: '',
+            reputation: ''
         })
     }
 
@@ -59,4 +70,10 @@ export class PartyCreationForm extends React.Component{
     }
 }
 
-export default withRouter(PartyCreationForm);
+function mapStateToProps(state) {
+    return {
+        user: state.userReducer.user
+    }
+}
+
+export default connect(mapStateToProps, {})(withRouter(PartyCreationForm));
