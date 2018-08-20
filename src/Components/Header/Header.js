@@ -17,7 +17,7 @@ export class Header extends React.Component{
                     <div></div>
                 </div>
                 <div className='header-title'>
-                    <h1>Gloomhaven Manager</h1>
+                    <h1>{this.props.headerTitle }</h1>
                 </div>
                 <div className='header-button'>
                     Button
