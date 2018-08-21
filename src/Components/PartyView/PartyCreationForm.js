@@ -27,7 +27,7 @@ export class PartyCreationForm extends React.Component{
         e.preventDefault();
 
         let party = {
-            userID: 1, //TODO: Need Dynamic
+            userID: this.props.user.user_id,
             name: this.state.name,
             gold: this.state.gold,
             location: this.state.location,
@@ -35,7 +35,7 @@ export class PartyCreationForm extends React.Component{
         }
 
         axios.post('/api/party', party).then((result) => {
-            console.log(result);
+            this.props.history.push('/dashboard/party')
             this.resetForm();
         }).catch((err) =>{
             console.log(err);
@@ -46,6 +46,7 @@ export class PartyCreationForm extends React.Component{
         this.setState({
             name: '',
             location: '',
+            gold: '',
             reputation: ''
         })
     }
