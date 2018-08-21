@@ -24,7 +24,7 @@ export class PartyView extends React.Component{
                 <Header clickBtn={this.handlePartyBtnClick} headerTitle={"Party"} btn={'Create'}/>
                 <main className='party-view-main'>
                     <Switch>
-                        <Route path='/dashboard/party' component={PartyList}/>
+                        <Route exact path='/dashboard/party' component={PartyList}/>
                         <Route path='/dashboard/party/add' component={PartyCreationForm}/>
                     </Switch>
                 </main>

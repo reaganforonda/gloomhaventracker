@@ -12,8 +12,23 @@ export class PartyListCard extends React.Component{
     render(){
         return (
             <div className='party-list-card'>
-                
+                <div>{this.props.partyName}</div>
+                <div>
+                    {this.props.partyLocation}
+                </div>
+                <div>
+                    
+                </div>
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        user: state.userReducer.user,
+        parties: state.partyReducer.parties
+    }
+}
+
+export default connect(mapStateToProps, {})(withRouter(PartyListCard));
