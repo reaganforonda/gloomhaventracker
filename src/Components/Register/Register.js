@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {setActiveUser} from '../../ducks/userReducer'
 
 export class Register extends React.Component{
     constructor(props){
@@ -39,6 +40,7 @@ export class Register extends React.Component{
         
         if(validForm) {
             axios.post('/api/auth/register', user).then((result) => {
+                this.props.setActiveUser(user);
                 this.resetForm();
                 this.props.history.push('/dashboard');
             }).catch((err) => {
@@ -112,4 +114,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps,{})(withRouter(Register));
+export default connect(mapStateToProps,{setActiveUser})(withRouter(Register));
