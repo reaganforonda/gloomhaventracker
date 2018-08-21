@@ -135,4 +135,12 @@ table {
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .party-list-header {
-    display: flex; } }
+    display: flex;
+    justify-content: space-between;
+    text-align: center; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .party-list-card {
+    display: flex;
+    justify-content: space-between;
+    text-align: center; } }
