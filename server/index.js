@@ -6,6 +6,7 @@ dotenv.config();
 
 const massive = require('massive');
 const app = express();
+const middleware = require('./middlewares/middleware');
 const session = require('express-session');
 const userController = require('./controllers/userController');
 const partyController = require('./controllers/partyController');
@@ -30,12 +31,17 @@ app.use(
 
 massive(CONNECTION_STRING).then((dbInstance) => {
     app.set('db', dbInstance);
-})
+});
+
+app.use(middleware.checkSession);
 
 /******** ENDPOINTS ********/
 
 // USER ENDPOINTS
 app.post('/api/auth/register', userController.register)
+app.get('/api/auth/me', authController.validate)
+app.post('/api/auth/login', authController.login);
+app.get('/api/auth/logout', authController.logout);
 
 // PARTY ENDPOINTS
 app.post('/api/party', partyController.createParty)
