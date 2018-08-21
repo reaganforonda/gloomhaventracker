@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import ReputationDropDown from '../Dropdowns/ReputationDropDown';
 
 export class PartyCreationForm extends React.Component{
     constructor(props){
@@ -17,6 +18,7 @@ export class PartyCreationForm extends React.Component{
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetForm = this.resetForm.bind(this);
+        this.handleReputationSelect = this.handleReputationSelect.bind(this);
     }
 
     handleInputChange(e) {
@@ -33,6 +35,8 @@ export class PartyCreationForm extends React.Component{
             location: this.state.location,
             reputation : this.state.reputation
         }
+
+        console.log(party); 
 
         axios.post('/api/party', party).then((result) => {
             this.props.history.push('/dashboard/party')
@@ -51,6 +55,10 @@ export class PartyCreationForm extends React.Component{
         })
     }
 
+    handleReputationSelect(e) {
+        this.setState({reputation: e.target.value})
+    }
+
     render(){
         return (
             <form className='player-create-form'>
@@ -64,9 +72,12 @@ export class PartyCreationForm extends React.Component{
                     Location: <input onChange={(e)=>this.handleInputChange(e)} type='text' 
                         value={this.state.location} name='location' />
                 </div>
-                <div className='player-create-form-row'>
+                {/* <div className='player-create-form-row'>
                     Reputation: <input onChange={(e)=>this.handleInputChange(e)} type='number' 
                         value={this.state.Reputation} name='reputation'/>
+                </div> */}
+                <div className='player-create-form-row'>
+                    Reputation: <ReputationDropDown handleSelect={this.handleReputationSelect}/>
                 </div>
                 <div className='player-create-form-row'>
                     Gold: <input onChange={(e)=>this.handleInputChange(e)} type='number' 

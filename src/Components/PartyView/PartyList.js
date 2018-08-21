@@ -9,7 +9,6 @@ export class PartyList extends React.Component{
 
         if(this.props.parties){
             parties = this.props.parties.map((party) => {
-                console.log(party);
                 return (
                     <PartyListCard key={party.party_id} partyName={party.party_name}
                         partyLocation={party.party_location}/>
