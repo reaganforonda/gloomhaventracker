@@ -51,10 +51,12 @@ export class LoginForm extends React.Component{
             <div className='login-form-modal'>
                 <form className='login-form'>
                     <div className='login-form-row'>
-                        User Name: <input onChange={(e) => this.handleInputChange(e)} name='userName' type='text' />
+                        User Name: <input value={this.state.userName} onChange={(e) => this.handleInputChange(e)} 
+                            name='userName' type='text' />
                     </div>
                     <div className='login-form-row'>
-                        Password: <input onChange={(e) => this.handleInputChange(e)} name='password' type='password'/>
+                        Password: <input value={this.state.password} onChange={(e) => this.handleInputChange(e)} 
+                            name='password' type='password'/>
                     </div>
                     <div className='login-form-row'>
                         <input onClick={(e)=>this.submitSignInForm(e)}type='submit' placeholder='Submit'/>
