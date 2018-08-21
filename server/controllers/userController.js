@@ -32,7 +32,7 @@ module.exports = {
 
     login: (req, res) => {
         const db = req.app.get('db');
-        const {userName, pasword} = req.body;
+        const {userName, password} = req.body;
 
         db.CHECK_USER_NAMES([userName]).then((users)=> {
             if(users.length === 0) {
@@ -44,7 +44,7 @@ module.exports = {
 
                 if(confirmedPW) {
                     req.session.user.user_id = userID;
-                    res.status(200).send(user[0]);
+                    res.status(200).send(users[0]);
                 } else {
                     res.sendStatus(401);
                 }
