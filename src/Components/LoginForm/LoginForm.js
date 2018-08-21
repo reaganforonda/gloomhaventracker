@@ -10,27 +10,27 @@ export class LoginForm extends React.Component{
         this.state={
             userName : '',
             password : ''
-        }
+        };
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.submitSignInForm = this.submitSignInForm.bind(this);
         this.resetForm = this.resetForm.bind(this);
-    }
+    };
 
     handleInputChange(e) {
         this.setState({[e.target.name] : e.target.value})
-    }
+    };
 
     submitSignInForm(e) {
         e.preventDefault();
-    }
+    };
 
     resetForm(){
         this.setState({
             userName : '',
             password : ''
         })
-    }
+    };
 
     render(){
         return (
