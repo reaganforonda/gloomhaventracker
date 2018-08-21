@@ -44,7 +44,6 @@ module.exports = {
 
                 if(confirmedPW) {
                     req.session.user.user_id = userID;
-                    req.session.user.acct_type = 1;
                     res.status(200).send(user[0]);
                 } else {
                     res.sendStatus(401);
