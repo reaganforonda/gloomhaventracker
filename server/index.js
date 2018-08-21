@@ -36,7 +36,6 @@ massive(CONNECTION_STRING).then((dbInstance) => {
 app.use(middleware.checkSession);
 
 /******** ENDPOINTS ********/
-
 // USER ENDPOINTS
 app.post('/api/auth/register', userController.register)
 app.get('/api/auth/me', authController.validate)
