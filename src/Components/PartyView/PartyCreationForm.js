@@ -63,7 +63,7 @@ export class PartyCreationForm extends React.Component{
                     Reputation: <input type='number' name='reputation'/>
                 </div>
                 <div className='player-create-form-row'>
-                    <input type='submit' placeholder='Create Party'/>
+                    <input onClick={(e) => this.handleSubmit(e)} type='submit' placeholder='Create Party'/>
                 </div>                
             </form>
         )
