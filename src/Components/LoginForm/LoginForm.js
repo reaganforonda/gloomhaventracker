@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setActiveUser} from '../../ducks/partyReducer';
+import {setActiveUser} from '../../ducks/userReducer';
 import axios from 'axios';
 
 export class LoginForm extends React.Component{
@@ -31,8 +31,9 @@ export class LoginForm extends React.Component{
         };
 
         axios.post('/api/auth/login', user).then((result) => {
-            console.log(result);
-            this.resetForm()
+            this.props.setActiveUser(result.data);
+            this.props.history.push('/dashboard');
+            this.resetForm();
         }).catch((err) => {
             console.log(err);
         })
