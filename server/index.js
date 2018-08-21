@@ -44,6 +44,7 @@ app.get('/api/auth/logout', userController.logout);
 
 // PARTY ENDPOINTS
 app.post('/api/party', partyController.createParty)
+app.get('/api/party/:userID', partyController.getAllParties);
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
