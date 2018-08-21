@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS achievements;
-DROP TABLE IF EXISTS party;
+DROP TABLE IF EXISTS parties;
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS users;
 
@@ -30,5 +30,7 @@ CREATE TABLE parties
     user_id INTEGER REFERENCES users(user_id),
     party_name VARCHAR(45),
     party_location VARCHAR(75),
-    party_gold INTEGER
+    party_gold INTEGER,
+    achievements VARCHAR(45),
+    reputation INTEGER
 );
