@@ -17,5 +17,17 @@ module.exports = {
 
     updateParty: (req, res) => {
         // TODO:
-    }
+    },
+
+    getAllParties: (req, res) => {
+        const db = req.app.get('db');
+        const {userID} = req.params;
+        
+        db.GET_ALL_PARTIES([userID]).then((result) => {
+            res.status(200).send(result);
+        }).catch((err) => {
+            console.log(`Server error while retrieving all parties: ${err}`);
+            res.sendStatus(500);
+        })
+    },
 }
