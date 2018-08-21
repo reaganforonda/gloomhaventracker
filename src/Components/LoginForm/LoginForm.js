@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setActiveUser} from '../../ducks/partyReducer';
+import axios from 'axios';
 
 export class LoginForm extends React.Component{
     constructor(props){
@@ -23,6 +24,19 @@ export class LoginForm extends React.Component{
 
     submitSignInForm(e) {
         e.preventDefault();
+
+        let user = {
+            userName: this.state.userName,
+            password: this.state.password
+        };
+
+        axios.post('/api/auth/login', user).then((result) => {
+            console.log(result);
+            this.resetForm()
+        }).catch((err) => {
+            console.log(err);
+        })
+
     };
 
     resetForm(){
