@@ -31,6 +31,7 @@ CREATE TABLE parties
     party_name VARCHAR(45),
     party_location VARCHAR(75),
     party_gold INTEGER,
-    achievements VARCHAR(45),
-    reputation INTEGER
+    achievements TEXT [],
+    reputation INTEGER,
+    price_mod INTEGER
 );
