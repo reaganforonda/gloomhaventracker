@@ -50,7 +50,6 @@ export class Landing extends React.Component{
                         !this.state.displayLogin ? null : (<LoginForm/>)
                     }
                 </main>
-                <Footer/>
             </div>
         )
     }
