@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import ReputationDropDown from '../Dropdowns/ReputationDropDown';
+import PriceModDropDown from '../Dropdowns/PriceModDropDown';
 
 export class PartyCreationForm extends React.Component{
     constructor(props){
@@ -12,13 +13,15 @@ export class PartyCreationForm extends React.Component{
             name: '',
             location: '',
             gold: '',
-            reputation: ''
+            reputation: '',
+            priceMod: ''
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetForm = this.resetForm.bind(this);
         this.handleReputationSelect = this.handleReputationSelect.bind(this);
+        this.handlePriceModSelect = this.handlePriceModSelect.bind(this);
     }
 
     handleInputChange(e) {
@@ -33,10 +36,9 @@ export class PartyCreationForm extends React.Component{
             name: this.state.name,
             gold: this.state.gold,
             location: this.state.location,
-            reputation : this.state.reputation
+            reputation : this.state.reputation,
+            priceMod : this.state.priceMod
         }
-
-        console.log(party); 
 
         axios.post('/api/party', party).then((result) => {
             this.props.history.push('/dashboard/party')
@@ -59,6 +61,10 @@ export class PartyCreationForm extends React.Component{
         this.setState({reputation: e.target.value})
     }
 
+    handlePriceModSelect(e) {
+        this.setState({priceMod : e.target.value})
+    }
+
     render(){
         return (
             <form className='player-create-form'>
@@ -78,6 +84,9 @@ export class PartyCreationForm extends React.Component{
                 </div> */}
                 <div className='player-create-form-row'>
                     Reputation: <ReputationDropDown handleSelect={this.handleReputationSelect}/>
+                </div>
+                <div className='player-create-form-row'>
+                    Shop Price Modifier: <PriceModDropDown handleSelect={this.handlePriceModSelect}/>
                 </div>
                 <div className='player-create-form-row'>
                     Gold: <input onChange={(e)=>this.handleInputChange(e)} type='number' 
