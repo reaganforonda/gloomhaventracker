@@ -3,10 +3,10 @@ const axios = require('axios');
 module.exports = {
     createParty: (req, res) => {
         const db = req.app.get('db');
-        const {userID, name, location, gold} = req.body;
+        const {userID, name, location, gold, reputation} = req.body;
         console.log(req.body);
 
-        db.CREATE_PARTY([userID, name, location, gold]).then((result) => {
+        db.CREATE_PARTY([userID, name, location, gold, reputation   ]).then((result) => {
             console.log(result); //TODO: REMOVE
             res.status(200).send(result);
         }).catch((err) => {
