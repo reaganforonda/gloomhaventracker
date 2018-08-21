@@ -4,7 +4,7 @@ module.exports = {
     checkSession: (req, res, next) => {
         if(!req.session.user) {
             req.session.user = {session_id: '', user_id: ''};
-            req.sesion.user.session_id = session_id;
+            req.session.user.session_id = session_id;
             session_id++;
         }
         next();
