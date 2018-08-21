@@ -38,9 +38,9 @@ app.use(middleware.checkSession);
 /******** ENDPOINTS ********/
 // USER ENDPOINTS
 app.post('/api/auth/register', userController.register)
-app.get('/api/auth/me', authController.validate)
-app.post('/api/auth/login', authController.login);
-app.get('/api/auth/logout', authController.logout);
+app.get('/api/auth/me', userController.validate)
+app.post('/api/auth/login', userController.login);
+app.get('/api/auth/logout', userController.logout);
 
 // PARTY ENDPOINTS
 app.post('/api/party', partyController.createParty)
