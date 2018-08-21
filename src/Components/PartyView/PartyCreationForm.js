@@ -10,6 +10,7 @@ export class PartyCreationForm extends React.Component{
         this.state={
             name: '',
             location: '',
+            gold: '',
             reputation: ''
         }
 
@@ -28,6 +29,7 @@ export class PartyCreationForm extends React.Component{
         let party = {
             userID: 1, //TODO: Need Dynamic
             name: this.state.name,
+            gold: this.state.gold,
             location: this.state.location,
             reputation : this.state.reputation
         }
@@ -54,13 +56,20 @@ export class PartyCreationForm extends React.Component{
                 <div className='player-create-form-row'>
                 </div>
                 <div className='player-create-form-row'>
-                    Name: <input type='text' name='name'/>
+                    Name: <input onChange={(e)=>this.handleInputChange(e)} type='text' 
+                        value={this.state.name} name='name'/>
                 </div>
                 <div className='player-create-form-row'>
-                    Location: <input type='text' name='location' />
+                    Location: <input onChange={(e)=>this.handleInputChange(e)} type='text' 
+                        value={this.state.location} name='location' />
                 </div>
                 <div className='player-create-form-row'>
-                    Reputation: <input type='number' name='reputation'/>
+                    Reputation: <input onChange={(e)=>this.handleInputChange(e)} type='number' 
+                        value={this.state.Reputation} name='reputation'/>
+                </div>
+                <div className='player-create-form-row'>
+                    Gold: <input onChange={(e)=>this.handleInputChange(e)} type='number' 
+                        value={this.state.gold} name='gold'/>
                 </div>
                 <div className='player-create-form-row'>
                     <input onClick={(e) => this.handleSubmit(e)} type='submit' placeholder='Create Party'/>
