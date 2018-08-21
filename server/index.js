@@ -10,6 +10,7 @@ const middleware = require('./middlewares/middleware');
 const session = require('express-session');
 const userController = require('./controllers/userController');
 const partyController = require('./controllers/partyController');
+const dataController = require('./controllers/dataController');
 
 const {
     SERVER_PORT,
@@ -45,6 +46,9 @@ app.get('/api/auth/logout', userController.logout);
 // PARTY ENDPOINTS
 app.post('/api/party', partyController.createParty)
 app.get('/api/party/:userID', partyController.getAllParties);
+
+// DATA ENDPOINTS
+app.get('/api/data/achievements', dataController.getAchievements);
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
