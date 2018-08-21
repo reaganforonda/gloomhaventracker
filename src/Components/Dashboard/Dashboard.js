@@ -3,6 +3,8 @@ import {Switch, Route, withRouter} from 'react-router-dom';
 import PartyView from '../PartyView/PartyView';
 import { CampaignView } from '../CampaignView/CampaignView';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {getAllParties} from '../../ducks/partyReducer';
 
 export class Dashboard extends React.Component{
     constructor(props){
@@ -14,6 +16,7 @@ export class Dashboard extends React.Component{
     componentDidMount = async() => {
         await axios.get('/api/auth/me').then((user)=> {
             console.log('Logged In');
+            this.props.getAllParties(this.props.user.user_id);
         }).catch((err) => {
             console.log(err); //TODO: 
             this.props.history.push('/')
@@ -33,4 +36,11 @@ export class Dashboard extends React.Component{
     }
 }
 
-export default withRouter(Dashboard);
+function mapStateToProps(state){
+    return {
+        user: state.userReducer.user,
+        parties: state.partyReducer.parties
+    }
+}
+
+export default connect(mapStateToProps, {getAllParties})(withRouter(Dashboard));
