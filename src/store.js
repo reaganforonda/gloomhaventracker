@@ -2,10 +2,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import userReducer from './ducks/userReducer';
 import partyReducer from './ducks/partyReducer';
+import dataReducer from './ducks/dataReducer';
 
 const reducers = {
     userReducer: userReducer,
-    partyReducer : partyReducer
+    partyReducer : partyReducer,
+    dataReducer: dataReducer
 }
 
 let middleware = promiseMiddleware();
