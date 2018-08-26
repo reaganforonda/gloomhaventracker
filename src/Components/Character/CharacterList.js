@@ -30,7 +30,9 @@ export class CharacterList extends React.Component{
 
 function mapStateToProps(state) {
     return {
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        achievements: state.dataReducer.achievements,
+        classes: state.dataReducer.classes
     }
 }
 
