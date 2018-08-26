@@ -1,8 +1,9 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer';
 import LoginForm from '../LoginForm/LoginForm'
+import {connect} from 'react-redux';
+import {getAllAchievs, getAllClasses} from '../../ducks/dataReducer';
 
 export class Landing extends React.Component{
     constructor(props){
@@ -37,6 +38,11 @@ export class Landing extends React.Component{
         }
     }
 
+    componentDidMount(){
+        this.props.getAllAchievs();
+        this.props.getAllClasses();
+    }
+
     render(){
         return (
             <div className='landing-container'>
@@ -55,4 +61,11 @@ export class Landing extends React.Component{
     }
 }
 
-export default withRouter(Landing);
+function mapStateToProps(state) {
+    return {
+        achievements: state.dataReducer.achievements,
+        classes: state.dataReducer.classes
+    }
+}
+
+export default connect(mapStateToProps, {getAllAchievs, getAllClasses})(withRouter(Landing));
