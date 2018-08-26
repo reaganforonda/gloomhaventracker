@@ -12,7 +12,7 @@ export default function ClassDropDown(props) {
     }
 
     return (
-        <select>
+        <select onChange={(e)=>props.handleSelect(e)}>
             <option value='' disabled selected>Class</option>
             {options}
         </select>
