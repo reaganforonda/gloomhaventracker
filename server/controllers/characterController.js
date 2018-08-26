@@ -23,6 +23,7 @@ module.exports = {
             res.status(200).send(result);
         }).catch((err) => {
             console.log(`Server error while attempting to retrieve all characters: ${err}`);
+            res.sendStatus(500);
         });
     },
 
@@ -31,6 +32,11 @@ module.exports = {
 
         const {characterID} = req.params;
 
-        
+        db.GET_SELECT_CHARACTER([characterID]).then((result) => {
+            res.status(200).send(result);
+        }).catch((err)=> {
+            console.log(`Server error while attempting to retrieve selected character: ${err}`);
+            res.sendStatus(500);
+        })
     }
 }
