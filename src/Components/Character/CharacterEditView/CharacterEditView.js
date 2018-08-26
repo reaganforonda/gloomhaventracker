@@ -13,7 +13,7 @@ export class CharacterEdit extends React.Component{
 
     render(){
         return (
-            <div className='character-edit-container'>
+            <div className='character-edit-view-container'>
                 
             </div>
         )
