@@ -24,9 +24,6 @@ export class CharacterList extends React.Component{
                         <div className='character-list-table-col'>
                             Level
                         </div>
-                        <div className='character-list-table-col'>
-                            Retired
-                        </div>
                     </div>
                     <CharacterListCard characters={this.props.allCharacters}/>
                 </div>
