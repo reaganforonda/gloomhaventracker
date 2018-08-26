@@ -3,11 +3,14 @@ import {Link} from 'react-router-dom';
 
 export default function CharacterEditHeader(props) {
     return (
-        <div className='character-edit-header'>
+        <header className='character-edit-header'>
             <div className='character-edit-header-menu'>
-                <Link to=''>Add</Link>
-                <Link to=''>Add</Link>
+                <Link to=''>Details</Link>
+                <Link to=''>Perks</Link>
+                <Link to=''>Items</Link>
+                <Link to=''>Abilities</Link>
+                <Link to=''>Quest</Link>
             </div>
-        </div>
+        </header>
     )
 }
