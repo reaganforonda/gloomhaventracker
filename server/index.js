@@ -55,7 +55,8 @@ app.get('/api/data/classes', dataController.getClasses);
 // CHARACTER ENDPOINTS
 app.post('/api/character', characterController.createCharacter);
 app.get('/api/characters/:userID', characterController.getAllCharacters);
-app.get('/api/character/:characterID', characterController.getSelectedCharacter)
+app.get('/api/character/:characterID', characterController.getSelectedCharacter);
+app.pus('/api/character/:characterID', characterController.updateCharacter);
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)

@@ -38,5 +38,11 @@ module.exports = {
             console.log(`Server error while attempting to retrieve selected character: ${err}`);
             res.sendStatus(500);
         })
+    },
+
+    updateCharacter: (req, res) => {
+        const db = req.app.get('db');
+
+        const {} = req.body;
     }
 }
