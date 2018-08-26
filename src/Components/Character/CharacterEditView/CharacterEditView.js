@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import axios from 'axios';
+import CharacterEditHeader from './CharacterEditHeader';
 
 
 export class CharacterEdit extends React.Component{
@@ -14,7 +14,10 @@ export class CharacterEdit extends React.Component{
     render(){
         return (
             <div className='character-edit-view-container'>
-                
+                <CharacterEditHeader/>
+                <main className='character-edit-view-main'>
+
+                </main>
             </div>
         )
     }
