@@ -13,15 +13,6 @@ export class Dashboard extends React.Component{
         this.state={}
     }
     
-    componentDidMount = async() => {
-        await axios.get('/api/auth/me').then((user)=> {
-            console.log('Logged In');
-            this.props.getAllParties(this.props.user.user_id);
-        }).catch((err) => {
-            console.log(err); //TODO: 
-            this.props.history.push('/')
-        })
-    }
     render(){
         return(
             <div className='dashboard'>
