@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import ClassDropDown from '../Dropdowns/ClassDropdown';
+import {getAllClasses} from '../../ducks/dataReducer';
 
 export class CreateCharacterForm extends React.Component{
     constructor(props){
@@ -37,4 +38,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {})(withRouter(CreateCharacterForm));
+export default connect(mapStateToProps, {getAllClasses})(withRouter(CreateCharacterForm));
