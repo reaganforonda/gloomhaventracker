@@ -148,9 +148,26 @@ table {
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
   .character-list-card-row {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 4px 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s; }
+  .character-list-card-row:hover {
+    box-shadow: 0 1px 2px 0 rgba(235, 127, 0, 0.2); }
   .character-list-card-col {
-    width: calc(100/3);
     text-align: center;
-    border: solid red 1px;
     width: calc(100% / 3); } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  .character-list-table {
+    display: flex;
+    flex-direction: column; }
+  .character-list-table-header {
+    display: flex; }
+  .character-list-table-col {
+    width: calc(100% / 3);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-bottom: 1px solid blue; } }

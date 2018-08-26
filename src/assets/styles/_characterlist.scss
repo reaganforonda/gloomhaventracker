@@ -1,0 +1,19 @@
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .character-list-table{
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .character-list-table-header {
+        display: flex;
+    }
+
+    .character-list-table-col{
+        width: calc(100% / 3);
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+        border-bottom: 1px solid blue;
+        
+    }
+}
