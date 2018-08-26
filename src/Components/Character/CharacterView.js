@@ -5,12 +5,13 @@ import Header from '../Header/Header';
 import CharacterList from './CharacterList';
 import CreateCharacterForm from './CreateCharacterForm';
 import CharacterEdit from './CharacterEdit';
+import Footer from '../Footer/Footer';
 
 export class CharacterView extends React.Component{
     render(){
         return (
             <div className='charcater-view-container'>
-                <Header/>
+                <Header headerTitle={"Characters"} btn={'Create'}/>
                 <main className='character-view-main'>
                     <Switch>
                         <Route exact path='/dashboard/characters' component={CharacterList}/>
@@ -18,6 +19,7 @@ export class CharacterView extends React.Component{
                         <Route path='/dashboard/characters/edit' component={CharacterEdit}/>
                     </Switch>
                 </main>
+                <Footer/>
             </div>
         )
     }

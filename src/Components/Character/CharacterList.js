@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-export default class CharacterList extends React.Component{
+export class CharacterList extends React.Component{
     render(){
         return (
             <div className='character-list-container'>
