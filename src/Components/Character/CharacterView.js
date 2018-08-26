@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter, Switch, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header from '../Header/Header';
+import CharacterList from './CharacterList';
 
 export class CharacterView extends React.Component{
     render(){
@@ -10,7 +11,7 @@ export class CharacterView extends React.Component{
                 <Header/>
                 <main className='character-view-main'>
                     <Switch>
-                        <Route exact path='/dashboard/characters' component={}/>
+                        <Route exact path='/dashboard/characters' component={CharacterList}/>
                         <Route path='/dashboard/characteres/add' component={}/>
                     </Switch>
                 </main>
