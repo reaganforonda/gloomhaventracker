@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Header from '../Header/Header';
 import CharacterList from './CharacterList';
 import CreateCharacterForm from './CreateCharacterForm';
-import CharacterEdit from './CharacterEdit';
+import CharacterEdit from './CharacterEditView/CharacterEditView';
 import Footer from '../Footer/Footer';
 import {getAllCharacters} from '../../ducks/characterReducer';
 
