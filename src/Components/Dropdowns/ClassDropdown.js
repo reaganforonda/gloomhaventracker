@@ -1,11 +1,10 @@
 import React from 'react';
 
 
-export default function CharacterDropDown(props) {
+export default function ClassDropDown(props) {
     
     return (
-        <select >
-
+        <select>
         </select>
     )
 }
