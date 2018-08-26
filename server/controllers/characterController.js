@@ -6,7 +6,7 @@ module.exports = {
 
         const {userID, characterName, characterClass} = req.body;
 
-        db.CREATE_NEW_CHARACTER([userID, characterName, characterClass]).then((result) => {
+        db.CREATE_NEW_CHARACTER([userID, characterClass, characterName]).then((result) => {
             res.status(200).send(result);
         }).catch((err) => {
             console.log(`Server error while attempting to create new character: ${err}`);
@@ -17,7 +17,7 @@ module.exports = {
     getAllCharacters: (req, res) => {
         const db = req.app.get('db');
 
-        const {userID} = rq.params;
+        const {userID} = req.params;
 
         db.GET_ALL_CHARACTERS([userID]).then((result) => {
             res.status(200).send(result);
