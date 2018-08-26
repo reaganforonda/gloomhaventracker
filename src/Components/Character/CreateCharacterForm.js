@@ -11,9 +11,7 @@ export class CreateCharacterForm extends React.Component{
 
         this.state={
             characterName: '',
-            characterClass: '',
-            experience: '',
-            level : ''
+            characterClass: ''
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -36,9 +34,7 @@ export class CreateCharacterForm extends React.Component{
         let character={
             userID: this.props.user.user_id,
             characterName: this.state.characterName,
-            characterClass : this.state.characterClass,
-            experience: this.state.experience,
-            level: this.state.level
+            characterClass : this.state.characterClass
         }
 
         console.log(character);
@@ -62,16 +58,6 @@ export class CreateCharacterForm extends React.Component{
                     <div className='create-character-form-row'>
                         Class: <ClassDropDown handleSelect={this.handleClassSelect} classes={this.props.classes}/>
                     </div>
-                    <div className='create-character-form-row'>
-                        Experience: <input name='experience' type='number' value={this.state.experience} onChange={(e) => this.handleInputChange(e)} />
-                    </div>
-                    <div className='create-character-form-row'>
-                        Level: <input name='level' type='number' value={this.state.level} onChange={(e) =>thsi.handleInputChange(e)} />
-                    </div>
-                    <div className='create-character-form-row'>
-                        
-                    </div>
-
                 </form>
                 <button onClick={(e)=>this.handleSubmit(e)} >Submit</button>
             </div>
