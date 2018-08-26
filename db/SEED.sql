@@ -187,3 +187,35 @@ INSERT INTO achievements
 (achievement_name)
 VALUES
 ('Water-Breathing');
+
+
+-- CLASSES
+INSERT INTO classes
+(class_name)
+VALUES
+('Brute');
+
+INSERT INTO classes
+(class_name)
+VALUES
+('Cragheart');
+
+INSERT INTO classes
+(class_name)
+VALUES
+('MindTheif');
+
+INSERT INTO classes
+(class_name)
+VALUES
+('Spellweaver');
+
+INSERT INTO classes
+(class_name)
+VALUES
+('Scoundrel');
+
+INSERT INTO classes
+(class_name)
+VALUES
+('Tinkerer');
