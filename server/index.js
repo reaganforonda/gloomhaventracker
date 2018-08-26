@@ -11,6 +11,7 @@ const session = require('express-session');
 const userController = require('./controllers/userController');
 const partyController = require('./controllers/partyController');
 const dataController = require('./controllers/dataController');
+const characterController = require('./controllers/characterController');
 
 const {
     SERVER_PORT,
@@ -50,6 +51,9 @@ app.get('/api/party/:userID', partyController.getAllParties);
 // DATA ENDPOINTS
 app.get('/api/data/achievements', dataController.getAchievements);
 app.get('/api/data/classes', dataController.getClasses);
+
+// CHARACTER ENDPOINTS
+app.post('/api/character', characterController.createCharacter);
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
