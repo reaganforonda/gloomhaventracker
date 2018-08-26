@@ -1,7 +1,10 @@
+DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS achievements;
 DROP TABLE IF EXISTS parties;
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS users;
+
 
 CREATE TABLE users
 (
@@ -34,4 +37,19 @@ CREATE TABLE parties
     achievements TEXT [],
     reputation INTEGER,
     price_mod INTEGER
+);
+
+CREATE TABLE classes
+(
+    class_id SERIAL PRIMARY KEY,
+    class_name VARCHAR(45)
+);
+
+CREATE TABLE characters (
+    character_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    party_id INTEGER REFERENCES parties(party_id),
+    class_id INTEGER REFERENCES classes(class_id),
+    character_name VARCHAR(45)
+
 );
