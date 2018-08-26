@@ -19,7 +19,7 @@ export class CharacterList extends React.Component{
     handleCharacterClick(characterID){
         this.props.loadSelectedCharacter(characterID);
         if(this.props.character !== 'Loading') {
-            this.props.history.pusH('/dashboard/characters/edit');
+            this.props.history.push('/dashboard/characters/edit');
             // console.log('hit'); TODO:
         }
     }
