@@ -13,7 +13,7 @@ export class Footer extends React.Component{
                         <Link to='/dashboard/party'>Party</Link>
                     </li>
                     <li className='footer-menu-item'>
-                        Characters
+                        <Link to='/dashboard/characters'>Characters</Link>
                     </li>
                     <li className='footer-menu-item'>
                         Combat
