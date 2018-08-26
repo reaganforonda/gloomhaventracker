@@ -50,6 +50,10 @@ CREATE TABLE characters (
     user_id INTEGER REFERENCES users(user_id),
     party_id INTEGER REFERENCES parties(party_id),
     class_id INTEGER REFERENCES classes(class_id),
-    character_name VARCHAR(45)
-
+    character_name VARCHAR(45),
+    experience INTEGER,
+    level INTEGER,
+    gold INTEGER,
+    retired BOOLEAN,
+    ITEMS JSON
 );
