@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {getAllCharacters} from '../../ducks/characterReducer';
+import {getAllCharacters, loadSelectedCharacter} from '../../ducks/characterReducer';
 import CharacterListCard from './CharacterListCard';
 
 export class CharacterList extends React.Component{
@@ -16,8 +16,12 @@ export class CharacterList extends React.Component{
         this.props.getAllCharacters(this.props.user.user_id);
     }
 
-    handleCharacterClick(){
-
+    handleCharacterClick(characterID){
+        this.props.loadSelectedCharacter(characterID);
+        if(this.props.character !== 'Loading') {
+            this.props.history.pusH('/dashboard/characters/edit');
+            // console.log('hit'); TODO:
+        }
     }
 
     render(){
@@ -47,8 +51,9 @@ function mapStateToProps(state) {
         user: state.userReducer.user,
         achievements: state.dataReducer.achievements,
         classes: state.dataReducer.classes,
-        allCharacters : state.characterReducer.allCharacters
+        allCharacters : state.characterReducer.allCharacters,
+        character : state.characterReducer.character
     }
 }
 
-export default connect(mapStateToProps, {getAllCharacters})(withRouter(CharacterList));
+export default connect(mapStateToProps, {getAllCharacters, loadSelectedCharacter})(withRouter(CharacterList));
