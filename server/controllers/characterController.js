@@ -18,5 +18,11 @@ module.exports = {
         const db = req.app.get('db');
 
         const {userID} = rq.params;
+
+        db.GET_ALL_CHARACTERS([userID]).then((result) => {
+            res.status(200).send(result);
+        }).catch((err) => {
+            console.log(`Server error while attempting to retrieve all characters: ${err}`);
+        });
     }
 }
