@@ -24,5 +24,13 @@ module.exports = {
         }).catch((err) => {
             console.log(`Server error while attempting to retrieve all characters: ${err}`);
         });
+    },
+
+    getSelectedCharacter: (req, res) =>{
+        const db = req.app.get('db');
+
+        const {characterID} = req.params;
+
+        
     }
 }
