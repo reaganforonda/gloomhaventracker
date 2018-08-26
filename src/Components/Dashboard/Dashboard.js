@@ -2,7 +2,6 @@ import React from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
 import PartyView from '../PartyView/PartyView';
 import CampaignView from '../CampaignView/CampaignView';
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {getAllParties} from '../../ducks/partyReducer';
 import CharacterView from '../Character/CharacterView';
