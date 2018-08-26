@@ -1,0 +1,14 @@
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .character-list-card-row{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .character-list-card-col{
+        width: calc(100/3);
+        text-align: center;
+        border: solid red 1px;
+        width: calc(100% / 3);
+    }
+}
