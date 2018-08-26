@@ -8,14 +8,29 @@ import CharacterEdit from './CharacterEdit';
 import Footer from '../Footer/Footer';
 
 export class CharacterView extends React.Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {}
+
+        this.handleCreateBtnClick = this.handleCreateBtnClick.bind(this);   
+    }
+
+    handleCreateBtnClick(e){
+        e.preventDefault();
+
+        this.props.history.push('/dashboard/characters/add');
+    }
+
     render(){
         return (
             <div className='charcater-view-container'>
-                <Header headerTitle={"Characters"} btn={'Create'}/>
+                <Header clickBtn={this.handleCreateBtnClick} headerTitle={"Characters"} btn={'Create'}/>
                 <main className='character-view-main'>
                     <Switch>
                         <Route exact path='/dashboard/characters' component={CharacterList}/>
-                        <Route path='/dashboard/characteres/add' component={CreateCharacterForm}/>
+                        <Route path='/dashboard/characters/add' component={CreateCharacterForm}/>
                         <Route path='/dashboard/characters/edit' component={CharacterEdit}/>
                     </Switch>
                 </main>
