@@ -32,7 +32,8 @@ function mapStateToProps(state) {
     return {
         user: state.userReducer.user,
         achievements: state.dataReducer.achievements,
-        classes: state.dataReducer.classes
+        classes: state.dataReducer.classes,
+        allCharacters : state.characterReducer.allCharacters
     }
 }
 

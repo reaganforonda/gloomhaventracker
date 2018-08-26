@@ -6,6 +6,7 @@ import CharacterList from './CharacterList';
 import CreateCharacterForm from './CreateCharacterForm';
 import CharacterEdit from './CharacterEdit';
 import Footer from '../Footer/Footer';
+import {getAllCharacters} from '../../ducks/characterReducer';
 
 export class CharacterView extends React.Component{
 
@@ -15,6 +16,10 @@ export class CharacterView extends React.Component{
         this.state = {}
 
         this.handleCreateBtnClick = this.handleCreateBtnClick.bind(this);   
+    }
+
+    componentDidMount(){
+        this.props.getAllCharacters(this.props.user.user_id);
     }
 
     handleCreateBtnClick(e){
@@ -42,8 +47,9 @@ export class CharacterView extends React.Component{
 
 function mapStateToProps(state) {
     return {
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        allCharacters : state.characterReducer.allCharacters
     }
 }
 
-export default connect(mapStateToProps, {})(withRouter(CharacterView));
+export default connect(mapStateToProps, {getAllCharacters})(withRouter(CharacterView));

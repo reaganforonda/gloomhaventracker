@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import ClassDropDown from '../Dropdowns/ClassDropdown';
 import {getAllClasses} from '../../ducks/dataReducer';
+import {getAllCharacters} from '../../ducks/characterReducer';
 
 export class CreateCharacterForm extends React.Component{
     constructor(props){
@@ -18,6 +19,7 @@ export class CreateCharacterForm extends React.Component{
         this.handleClassSelect = this.handleClassSelect.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetForm = this.resetForm.bind(this);
+        this.validForm = this.validForm.bind(this);
     }
 
     handleInputChange(e) {
@@ -37,12 +39,30 @@ export class CreateCharacterForm extends React.Component{
             characterClass : this.state.characterClass
         }
 
-        console.log(character);
+        if(this.validForm()){
+            axios.post('/api/character', character).then((result) => {
+                this.props.getAllCharacters(this.props.user.user_id);
+                this.resetForm();
+            }).catch((err) => {
+                console.log(err);
+            })
+        } else {
+            console.log("Error") //TODO:
+        }
+    }
+
+    validForm(){
+        if(this.state.characterName && this.state.characterClass) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
     resetForm(){
         this.setState({
-
+            characterName: '',
+            characterClass: ''
         })
     }
 
@@ -69,8 +89,9 @@ function mapStateToProps(state) {
     return {
         user: state.userReducer.user,
         achievements: state.dataReducer.achievements,
-        classes: state.dataReducer.classes
+        classes: state.dataReducer.classes,
+        allCharacters: state.characterReducer.allCharacters
     }
 }
 
-export default connect(mapStateToProps, {getAllClasses})(withRouter(CreateCharacterForm));
+export default connect(mapStateToProps, {getAllClasses, getAllCharacters})(withRouter(CreateCharacterForm));
