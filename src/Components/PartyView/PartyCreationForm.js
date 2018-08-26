@@ -78,10 +78,6 @@ export class PartyCreationForm extends React.Component{
                     Location: <input onChange={(e)=>this.handleInputChange(e)} type='text' 
                         value={this.state.location} name='location' />
                 </div>
-                {/* <div className='player-create-form-row'>
-                    Reputation: <input onChange={(e)=>this.handleInputChange(e)} type='number' 
-                        value={this.state.Reputation} name='reputation'/>
-                </div> */}
                 <div className='player-create-form-row'>
                     Reputation: <ReputationDropDown handleSelect={this.handleReputationSelect}/>
                 </div>
