@@ -20,8 +20,8 @@ export function getAllCharacters(userID) {
 };
 
 export function loadSelectedCharacter(characterID) {
-    let character = axios.get(`/api/character/:${characterID}`).then((result) => {
-        return result.data;
+    let character = axios.get(`/api/character/${characterID}`).then((result) => {
+        return result.data[0];
     })
 
     return {
