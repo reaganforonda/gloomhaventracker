@@ -10,4 +10,15 @@ module.exports = {
             res.sendStatus(500);
         })
     },
+
+    getClasses : (req, res) => {
+        const db = req.app.get('db');
+
+        db.GET_CLASSES().then((result) => {
+            res.status(200).send(result);
+        }).catch((err) => {
+            console.log(`Server error while attempting to retrieve classes: ${err}`)
+            res.sendStatus(500);
+        })
+    }
 }
