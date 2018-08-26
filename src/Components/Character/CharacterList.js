@@ -6,11 +6,21 @@ import CharacterListCard from './CharacterListCard';
 
 export class CharacterList extends React.Component{
 
+    constructor(props) {
+        super(props);
+
+        this.handleCharacterClick = this.handleCharacterClick.bind(this);
+    }
+
     componentDidMount(){
         this.props.getAllCharacters(this.props.user.user_id);
     }
+
+    handleCharacterClick(){
+
+    }
+
     render(){
-        
         return (
             <div className='character-list-container'>
                 <div className='character-list-table'>
@@ -25,7 +35,7 @@ export class CharacterList extends React.Component{
                             Level
                         </div>
                     </div>
-                    <CharacterListCard characters={this.props.allCharacters}/>
+                    <CharacterListCard characterSelect={this.handleCharacterClick} characters={this.props.allCharacters}/>
                 </div>
             </div>
         )
