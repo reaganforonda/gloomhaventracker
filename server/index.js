@@ -49,6 +49,7 @@ app.get('/api/party/:userID', partyController.getAllParties);
 
 // DATA ENDPOINTS
 app.get('/api/data/achievements', dataController.getAchievements);
+app.get('/api/data/classes', dataController.getClasses);
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
