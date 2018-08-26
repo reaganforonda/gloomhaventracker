@@ -1,4 +1,4 @@
-import axios from 'react';
+import axios from 'axios';
 
 const INITIAL_STATE ={
     achievements:[],
@@ -9,7 +9,7 @@ const GET_ALL_ACHIEV = "GET_ALL_ACHIEV";
 const GET_ALL_CLASSES = "GET_ALL_CLASSES";
 
 export function getAllAchievs(){
-    let achievs = axios.get('/api/achievments').then((result) =>{
+    let achievs = axios.get('/api/data/achievments').then((result) =>{
         return result.data;
     })
 
@@ -20,7 +20,7 @@ export function getAllAchievs(){
 }
 
 export function getAllClasses(){
-    let classes = axios.get('/api/classes').then((result) => {
+    let classes = axios.get('/api/data/classes').then((result) => {
         return result.data;
     })
 
