@@ -23,6 +23,8 @@ export class CharacterDetails extends React.Component {
         this.handleExpSelect = this.handleExpSelect.bind(this);
         this.handleSaveSubmit = this.handleSaveSubmit.bind(this);
         this.handleAddXP = this.handleAddXP.bind(this);
+        this.handleAddGold = this.handleAddGold.bind(this);
+        this.handleSubtractGold = this.handleSubtractGold.bind(this);
     }
 
     static getDerivedStateFromProps(props, state){
@@ -68,8 +70,18 @@ export class CharacterDetails extends React.Component {
     }
 
     handleAddXP(){
-        let amnt = ~~(prompt(`Add XP`, this.state.exp));
+        let amnt = ~~(prompt(`Add XP`, 0));
         this.setState({exp: amnt + this.state.exp})
+    }
+
+    handleAddGold(){
+        let amnt = ~~(prompt('Add Gold', 0));
+        this.setState({gold: amnt + this.state.gold});
+    }
+
+    handleSubtractGold(){
+        let amnt = ~~(prompt('Subtract Gold', 0));
+        this.setState({gold: this.state.gold - amnt});
     }
 
     render(){
@@ -93,10 +105,13 @@ export class CharacterDetails extends React.Component {
                     <div className='character-details-main-row'>
                         <p>Experience</p> 
                         <input value={this.state.exp} name='exp' type='number' disabled/>
-                        <button onClick={()=>this.handleAddXP()}>Add Exp</button>
+                        <button onClick={()=>this.handleAddXP()}>+</button>
                     </div>
                     <div className='character-details-main-row'>
                         <p>Gold</p>
+                        <input value={this.state.gold} name='gold' type='number' disabled/>
+                        <button onClick={()=>this.handleAddGold()}>+</button>
+                        <button onClick={()=>this.handleSubtractGold()}>-</button>
                     </div>
                     <div className='character-details-main-row'>
                         <p>Notes</p>
