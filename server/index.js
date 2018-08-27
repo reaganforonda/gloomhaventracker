@@ -51,12 +51,14 @@ app.get('/api/party/:userID', partyController.getAllParties);
 // DATA ENDPOINTS
 app.get('/api/data/achievements', dataController.getAchievements);
 app.get('/api/data/classes', dataController.getClasses);
+app.get('/api/data/perks/:classID', dataController.getCharacterPerks);
 
 // CHARACTER ENDPOINTS
 app.post('/api/character', characterController.createCharacter);
 app.get('/api/characters/:userID', characterController.getAllCharacters);
 app.get('/api/character/:characterID', characterController.getSelectedCharacter);
 app.put('/api/character/:characterID', characterController.updateCharacter);
+
 
 app.listen(SERVER_PORT, ()=> {
     console.log(`Creeping on: ${SERVER_PORT}`)
