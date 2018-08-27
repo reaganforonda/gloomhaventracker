@@ -8,7 +8,7 @@ export default function CharacterEditHeader(props) {
                 <Link to='/dashboard/characters/edit'>Details</Link>
                 <Link to='/dashboard/characters/edit/perks'>Perks</Link>
                 <Link to='/dashboard/characters/edit/items'>Items</Link>
-                <Link to=''>Abilities</Link>
+                <Link to='/dashboard/characters/edit/abilities'>Abilities</Link>
                 <Link to=''>Quest</Link>
             </div>
         </header>

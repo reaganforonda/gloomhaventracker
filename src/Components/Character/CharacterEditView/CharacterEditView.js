@@ -5,6 +5,7 @@ import CharacterEditHeader from './CharacterEditHeader';
 import CharacterDetails from './CharacterDetails';
 import CharacterPerks from './CharacterPerks';
 import CharacterItems from './CharacterItems';
+import CharacterAbilities from './CharacterAbilities';
 
 export class CharacterEdit extends React.Component{
     constructor(props) {
@@ -22,6 +23,7 @@ export class CharacterEdit extends React.Component{
                         <Route exact path='/dashboard/characters/edit' component={CharacterDetails} />
                         <Route path='/dashboard/characters/edit/perks' component={CharacterPerks}/>
                         <Route path='/dashboard/characters/edit/items' component={CharacterItems}/>
+                        <Route path='/dashboard/characters/edit/abilities' component={CharacterAbilities}/>
                     </Switch>
                 </main>
             </div>
