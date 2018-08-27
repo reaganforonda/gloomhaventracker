@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-
+import ExperienceDropDown from '../../Dropdowns/ExperienceDropDown';
+import {loadSelectedCharacter} from '../../../ducks/characterReducer';
+import axios from 'axios';
 
 export class CharacterDetails extends React.Component {
     constructor(props){
@@ -10,10 +12,12 @@ export class CharacterDetails extends React.Component {
         this.state = {
             characterName: '',
             level: '',
-            characterClass: ''
+            characterClass: '',
+            exp: ''
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleExpSelect = this.handleExpSelect.bind(this);
     }
 
     static getDerivedStateFromProps(props, state){
@@ -21,7 +25,8 @@ export class CharacterDetails extends React.Component {
             return {
                 characterName : props.character.character_name,
                 level: props.character.level,
-                characterClass: props.character.class_name
+                characterClass: props.character.class_name,
+                exp: props.character.experience
             }
         }
     }
@@ -29,6 +34,28 @@ export class CharacterDetails extends React.Component {
     handleInputChange(e) {
         this.setState({[e.target.name] : e.tarvet.value})
     };
+
+    handleExpSelect(e) {
+        this.setState({level: e.target.value})
+    }
+
+    handleSaveSubmit(e) {
+        e.preventDefault();
+
+        let updatedCharData = {
+            characterName : this.state.characterName,
+            level: this.state.level,
+            exp: this.state.exp
+        }
+
+        console.log(updatedCharData);
+
+        axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
+            this.props.loadSelectedCharacter(this.props.character.character_id);
+        }).catch((err) => {
+            console.log(err); //TODO:
+        })
+    }
 
     render(){
         return (
@@ -44,7 +71,7 @@ export class CharacterDetails extends React.Component {
                     </div>
                     <div className='character-details-main-row'>
                         <p>Level</p>
-                        <input disabled value={this.state.level} name='level' type='number'/>
+                        <ExperienceDropDown handleExpSelect={this.handleExpSelect} exp={this.state.exp}/>
                     </div>
                     <div className='character-details-main-row'>
                         <p>Experience</p>
@@ -54,6 +81,9 @@ export class CharacterDetails extends React.Component {
                     </div>
                     <div className='character-details-main-row'>
                         <p>Notes</p>
+                    </div>
+                    <div className='character-details-main-row'>
+                        <button>Save</button>
                     </div>
                 </main>
             </div>
@@ -68,4 +98,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {})(withRouter(CharacterDetails));
+export default connect(mapStateToProps, {loadSelectedCharacter})(withRouter(CharacterDetails));
