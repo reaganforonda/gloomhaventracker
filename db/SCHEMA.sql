@@ -57,6 +57,7 @@ CREATE TABLE characters (
     gold INTEGER,
     retired BOOLEAN,
     ITEMS JSON,
+    checkmarks JSON,
     perks TEXT []
 );
 
