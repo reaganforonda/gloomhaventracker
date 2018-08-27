@@ -327,22 +327,42 @@ VALUES
 INSERT INTO perks
 (class_id, perk_description)
 VALUES
-(4, 'Remove two -1 cards');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
 (4, 'Remove four +0 cards');
 
 INSERT INTO perks
 (class_id, perk_description)
 VALUES
-(4, 'Replace two +1 cards with two +2 card');
+(4, 'Replace one -1 card with one +1 card');
 
 INSERT INTO perks
 (class_id, perk_description)
 VALUES
-(4, 'Replace one -2 card with one +0 card');
+(4, 'Add two +1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(4, 'Add one +0 STUN card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(4, 'Add one +1 WOUND card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(4, 'Add one +1 IMMOBILIZE card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(4, 'Add one +1 CURSE card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(4, 'Add one +2 Fire card');
 
 INSERT INTO perks
 (class_id, perk_description)
@@ -352,37 +372,12 @@ VALUES
 INSERT INTO perks
 (class_id, perk_description)
 VALUES
-(4, 'Add two +1 cardw with rolling modifier');
+(4, 'Add one Earth card and one Wind card with rolling modifier');
 
 INSERT INTO perks
 (class_id, perk_description)
 VALUES
-(4, 'Add three PULL 1 cards with rolling modifier');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
-(4, 'Add three MUDDLE cards with rolling modifier');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
-(4, 'Add two IMMOBILIZE cards with rolling modifier');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
-(4, 'Add one STUN card with rolling modifier');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
-(4, 'Add one DISARM card and one MUDDLE card with rolling modifiers');
-
-INSERT INTO perks
-(class_id, perk_description)
-VALUES
-(4, 'Ignore negative scenario effects');
+(4, 'Add one Light card and one Dark card with rolling modifier');
 
 -- SCOUNDREL
 INSERT INTO perks
@@ -440,4 +435,63 @@ INSERT INTO perks
 VALUES
 (5, 'Ignore negative scenario effects');
 
--- 
+-- Mindtheif
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Remove two -1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Remove four +0 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Replace two +1 cards with two +2 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Replace one -2 card with one +0 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add one +2 Ice card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add two +1 cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add three PULL 1 cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add three MUDDLE cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add two IMMOBILIZE cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add one STUN card with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Add one DISARM card and one MUDDLE card with rolling modifiers');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(3, 'Ignore negative scenario effects');
