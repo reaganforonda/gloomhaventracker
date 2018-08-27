@@ -5,12 +5,21 @@ import CampaignView from '../CampaignView/CampaignView';
 import {connect} from 'react-redux';
 import {getAllParties} from '../../ducks/partyReducer';
 import CharacterView from '../Character/CharacterView';
+import axios from 'axios';
 
 export class Dashboard extends React.Component{
     constructor(props){
         super(props);
 
         this.state={}
+    }
+
+    componentDidMount = async ()=> {
+        await axios.get('/api/auth/me').then((user) => {
+
+        }).catch((err) => {
+            this.props.history.push('/')
+        })
     }
     
     render(){
