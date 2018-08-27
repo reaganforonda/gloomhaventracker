@@ -495,3 +495,59 @@ INSERT INTO perks
 (class_id, perk_description)
 VALUES
 (3, 'Ignore negative scenario effects');
+
+-- TINKERER
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Remove two -1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Replace one -2 card with one +0 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add two +1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add one +3 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add two Fire cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add three MUDDLE cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add one +1 WOUND card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add one +1 IMMOBILIZE card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add one +1 HEAL 2 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Add one +0 ADD TARGET card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(6, 'Ignore negative scenario effects');
