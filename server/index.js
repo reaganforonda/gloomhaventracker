@@ -58,6 +58,7 @@ app.post('/api/character', characterController.createCharacter);
 app.get('/api/characters/:userID', characterController.getAllCharacters);
 app.get('/api/character/:characterID', characterController.getSelectedCharacter);
 app.put('/api/character/:characterID', characterController.updateCharacter);
+app.put('/api/character/goals/:characterID', characterController.updateScenarioGoals)
 
 
 app.listen(SERVER_PORT, ()=> {
