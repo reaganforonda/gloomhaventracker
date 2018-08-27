@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import ExperienceDropDown from '../../Dropdowns/ExperienceDropDown';
+import LevelDropDown from '../../Dropdowns/LevelDropDown';
 import {loadSelectedCharacter} from '../../../ducks/characterReducer';
 import axios from 'axios';
 import LoadingSpinner from '../../Loading/LoadingSpinner';
@@ -16,21 +16,26 @@ export class CharacterDetails extends React.Component {
             level: '',
             characterClass: '',
             exp: '',
+            gold: ''
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleExpSelect = this.handleExpSelect.bind(this);
         this.handleSaveSubmit = this.handleSaveSubmit.bind(this);
+        this.handleAddXP = this.handleAddXP.bind(this);
     }
 
     static getDerivedStateFromProps(props, state){
         if(props.character) {
-            return {
-                characterID: props.character.character_id,  
-                characterName: props.character.character_name,
-                level: props.character.level,
-                characterClass: props.character.characterClass,
-                exp: props.character.experience
+            if(props.character.character_id !== state.characterID){
+                return {
+                    characterID: props.character.character_id,  
+                    characterName: props.character.character_name,
+                    exp: props.character.experience,
+                    level: props.character.level,
+                    characterClass: props.character.class_name,
+                    gold: props.character.gold
+                }
             }
         }
     }
@@ -62,6 +67,11 @@ export class CharacterDetails extends React.Component {
         // })
     }
 
+    handleAddXP(){
+        let amnt = ~~(prompt(`Add XP`, this.state.exp));
+        this.setState({exp: amnt + this.state.exp})
+    }
+
     render(){
         return (
             <div className='character-details-container'>
@@ -78,10 +88,12 @@ export class CharacterDetails extends React.Component {
                     </div>
                     <div className='character-details-main-row'>
                         <p>Level</p>
-                        <ExperienceDropDown handleExpSelect={this.handleExpSelect} exp={this.state.exp}/>
+                        <LevelDropDown handleExpSelect={this.handleExpSelect} exp={this.state.exp}/>
                     </div>
                     <div className='character-details-main-row'>
-                        <p>Experience</p>
+                        <p>Experience</p> 
+                        <input value={this.state.exp} name='exp' type='number' disabled/>
+                        <button onClick={()=>this.handleAddXP()}>Add Exp</button>
                     </div>
                     <div className='character-details-main-row'>
                         <p>Gold</p>
