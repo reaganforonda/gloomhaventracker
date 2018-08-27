@@ -64,4 +64,4 @@ CREATE TABLE perks (
     perk_id SERIAL PRIMARY KEY,
     class_id INTEGER REFERENCES classes(class_id),
     perk_description TEXT
-)
+);
