@@ -4,12 +4,14 @@ import {withRouter} from 'react-router-dom';
 import ExperienceDropDown from '../../Dropdowns/ExperienceDropDown';
 import {loadSelectedCharacter} from '../../../ducks/characterReducer';
 import axios from 'axios';
+import LoadingSpinner from '../../Loading/LoadingSpinner';
 
 export class CharacterDetails extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
+            character_id: '',
             characterName: '',
             level: '',
             characterClass: '',
@@ -18,21 +20,12 @@ export class CharacterDetails extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleExpSelect = this.handleExpSelect.bind(this);
+        this.handleSaveSubmit = this.handleSaveSubmit.bind(this);
     }
 
-    static getDerivedStateFromProps(props, state){
-        if(props.character){
-            return {
-                characterName : props.character.character_name,
-                level: props.character.level,
-                characterClass: props.character.class_name,
-                exp: props.character.experience
-            }
-        }
-    }
 
     handleInputChange(e) {
-        this.setState({[e.target.name] : e.tarvet.value})
+        this.setState({[e.target.name] : e.target.value})
     };
 
     handleExpSelect(e) {
@@ -50,17 +43,19 @@ export class CharacterDetails extends React.Component {
 
         console.log(updatedCharData);
 
-        axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
-            this.props.loadSelectedCharacter(this.props.character.character_id);
-        }).catch((err) => {
-            console.log(err); //TODO:
-        })
+        // axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
+        //     this.props.loadSelectedCharacter(this.props.character.character_id);
+        // }).catch((err) => {
+        //     console.log(err); //TODO:
+        // })
     }
 
     render(){
         return (
             <div className='character-details-container'>
-                <main className='character-details-main'>
+                {
+                    !this.props.character ? <LoadingSpinner/> : (
+                        <main className='character-details-main'>
                     <div className='character-details-main-row'>
                         <p>Name</p> <input value={this.state.characterName} name='characterName' type='text' 
                             onChange={(e) => this.handleInputChange(e)}/>
@@ -83,9 +78,11 @@ export class CharacterDetails extends React.Component {
                         <p>Notes</p>
                     </div>
                     <div className='character-details-main-row'>
-                        <button>Save</button>
+                        <button onClick={(e)=>this.handleSaveSubmit(e)}>Save</button>
                     </div>
                 </main>
+                    )
+                }
             </div>
         )
     }
