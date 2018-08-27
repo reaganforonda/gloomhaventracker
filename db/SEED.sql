@@ -219,3 +219,106 @@ INSERT INTO classes
 (class_name)
 VALUES
 ('Tinkerer');
+
+-- PERKS
+-- BRUTE
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Remove two -1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Replace one -1 card with one +1 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add two +1 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add one +3 Card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add three PUSH 1 cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add two PIERCE 3 cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add one STUN card with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add one DISARM card and one MUDDLE card with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add one ADD TARGET card with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Add one +1 Shield 1, Self card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(1, 'Ignore negative item effects and add one +1 card');
+
+-- CRAGHEART
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Remove four +0 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Replace one -1 card with one +1 card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add one -2 card and two +2 cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add one +1 IMMOBILIZE card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add one +2 MUDDLE card');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add tow PUSH 2 cards with rolling modifier');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add two Earth cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Add two Air cards');
+
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Ignore negative item effects');
