@@ -61,8 +61,6 @@ export class CharacterDetails extends React.Component {
             gold: this.state.gold
         }
 
-        console.log(updatedCharData);
-
         axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
             this.props.loadSelectedCharacter(this.props.character.character_id);
             this.props.getAllCharacters(this.props.user.user_id)
