@@ -11,16 +11,28 @@ export class CharacterDetails extends React.Component {
         super(props);
 
         this.state = {
-            character_id: '',
+            characterID: '',
             characterName: '',
             level: '',
             characterClass: '',
-            exp: ''
+            exp: '',
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleExpSelect = this.handleExpSelect.bind(this);
         this.handleSaveSubmit = this.handleSaveSubmit.bind(this);
+    }
+
+    static getDerivedStateFromProps(props, state){
+        if(props.character) {
+            return {
+                characterID: props.character.character_id,  
+                characterName: props.character.character_name,
+                level: props.character.level,
+                characterClass: props.character.characterClass,
+                exp: props.character.experience
+            }
+        }
     }
 
 
