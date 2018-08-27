@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS achievements;
 DROP TABLE IF EXISTS parties;
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS perks;
 
 
 CREATE TABLE users
@@ -55,5 +56,12 @@ CREATE TABLE characters (
     level INTEGER,
     gold INTEGER,
     retired BOOLEAN,
-    ITEMS JSON
+    ITEMS JSON,
+    perks TEXT []
 );
+
+CREATE TABLE perks (
+    perk_id SERIAL PRIMARY KEY,
+    class_id INTEGER REFERENCES classes(class_id),
+    perk_description TEXT
+)
