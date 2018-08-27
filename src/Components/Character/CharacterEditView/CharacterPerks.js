@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import CheckMarks from '../../Perks/CheckMarks';
 
 export class CharacterPerks extends React.Component{
     constructor(props) {
@@ -13,7 +13,7 @@ export class CharacterPerks extends React.Component{
     render(){
         return (
             <div className='character-perks-container'>
-                
+                <CheckMarks/>
             </div>
         )
     }
