@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ExperienceDropDown(props) {
+export default function LevelDropDown(props) {
     let exp = []
 
     for(var i =1; i <= 9; i ++) {
