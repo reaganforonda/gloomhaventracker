@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import LevelDropDown from '../../Dropdowns/LevelDropDown';
-import {loadSelectedCharacter} from '../../../ducks/characterReducer';
+import {loadSelectedCharacter, getAllCharacters} from '../../../ducks/characterReducer';
 import axios from 'axios';
 import LoadingSpinner from '../../Loading/LoadingSpinner';
 
@@ -57,16 +57,18 @@ export class CharacterDetails extends React.Component {
         let updatedCharData = {
             characterName : this.state.characterName,
             level: this.state.level,
-            exp: this.state.exp
+            exp: this.state.exp,
+            gold: this.state.gold
         }
 
         console.log(updatedCharData);
 
-        // axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
-        //     this.props.loadSelectedCharacter(this.props.character.character_id);
-        // }).catch((err) => {
-        //     console.log(err); //TODO:
-        // })
+        axios.put(`/api/character/${this.props.character.character_id}`, updatedCharData).then((result) => {
+            this.props.loadSelectedCharacter(this.props.character.character_id);
+            this.props.getAllCharacters(this.props.user.user_id)
+        }).catch((err) => {
+            console.log(err); //TODO:
+        })
     }
 
     handleAddXP(){
@@ -134,4 +136,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {loadSelectedCharacter})(withRouter(CharacterDetails));
+export default connect(mapStateToProps, {loadSelectedCharacter, getAllCharacters})(withRouter(CharacterDetails));
