@@ -4,6 +4,7 @@ import {withRouter, Switch, Route} from 'react-router-dom';
 import CharacterEditHeader from './CharacterEditHeader';
 import CharacterDetails from './CharacterDetails';
 import CharacterPerks from './CharacterPerks';
+import CharacterItems from './CharacterItems';
 
 export class CharacterEdit extends React.Component{
     constructor(props) {
@@ -20,6 +21,7 @@ export class CharacterEdit extends React.Component{
                     <Switch>
                         <Route exact path='/dashboard/characters/edit' component={CharacterDetails} />
                         <Route path='/dashboard/characters/edit/perks' component={CharacterPerks}/>
+                        <Route path='/dashboard/characters/edit/items' component={CharacterItems}/>
                     </Switch>
                 </main>
             </div>
