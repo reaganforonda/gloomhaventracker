@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import CheckMarks from '../../Perks/CheckMarks';
-import PerkContainer from '../../Perks/PerkContainer';
+import PerkContainer from '../../Perks/BrutePerks';
 
 export class CharacterPerks extends React.Component{
     constructor(props) {
