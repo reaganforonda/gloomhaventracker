@@ -24,6 +24,7 @@ export class CharacterEdit extends React.Component{
                         <Route path='/dashboard/characters/edit/perks' component={CharacterPerks}/>
                         <Route path='/dashboard/characters/edit/items' component={CharacterItems}/>
                         <Route path='/dashboard/characters/edit/abilities' component={CharacterAbilities}/>
+                        <Route path='/dashboard/characters/edit/quest' component={}/>
                     </Switch>
                 </main>
             </div>
