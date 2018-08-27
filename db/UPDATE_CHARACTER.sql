@@ -1,5 +1,6 @@
-UPDATE TABLE characters
-SET character_name = $1,
-    level=$2,
-    experience=$3,
-    gold=$4;
+UPDATE characters
+SET character_name = $2,
+    level=$3,
+    experience=$4,
+    gold=$5
+WHERE character_id = $1;
