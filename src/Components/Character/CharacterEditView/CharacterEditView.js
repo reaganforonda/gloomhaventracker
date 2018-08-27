@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {withRouter, Switch, Route} from 'react-router-dom';
 import CharacterEditHeader from './CharacterEditHeader';
 import CharacterDetails from './CharacterDetails';
+import CharacterPerks from './CharacterPerks';
 
 export class CharacterEdit extends React.Component{
     constructor(props) {
@@ -18,6 +19,7 @@ export class CharacterEdit extends React.Component{
                 <main className='character-edit-view-main'>
                     <Switch>
                         <Route exact path='/dashboard/characters/edit' component={CharacterDetails} />
+                        <Route path='/dashboard/characters/edit/perks' component={CharacterPerks}/>
                     </Switch>
                 </main>
             </div>
