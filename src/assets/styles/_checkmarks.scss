@@ -1,0 +1,23 @@
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    .checkmark-container{
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px 0;
+    }
+    
+    .checkmark-row{
+        display: flex;
+
+    }
+
+    .checkmark-box{
+        margin: 3px 3px;
+        border: 1px solid black;
+    }
+
+    .checkmark-box input {
+        transform: scale(1.2);
+    }
+}
