@@ -51,5 +51,18 @@ module.exports = {
             console.log(`Server error while attempting to update character: ${err}`);
             res.sendStatus(500);
         })
+    },
+
+    updateScenarioGoals: (req, res) => {
+        const db= req.app.get('db');
+        const {characterID} = req.params;
+        const {checkmarks} = req.body;
+
+        db.UPDATE_CHARACTER_GOALS([characterID, checkmarks]).then((result) => {
+            res.status(200).send(result);
+        }).catch((err) => {
+            console.log(`Server error while attempting to update character goals: ${err}`);
+            res.sendStatus(500);
+        })
     }
 }
