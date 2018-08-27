@@ -42,10 +42,10 @@ module.exports = {
 
     updateCharacter: (req, res) => {
         const db = req.app.get('db');
-
+        const {characterID} = req.params;
         const {characterName, level, exp, gold} = req.body;
 
-        db.UPDATE_CHARACTER([characterName, level, exp, gold]).then((result) => {
+        db.UPDATE_CHARACTER([characterID,characterName, level, exp, gold]).then((result) => {
             res.status(200).send(result);
         }).catch((err) => {
             console.log(`Server error while attempting to update character: ${err}`);
