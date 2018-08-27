@@ -25,7 +25,9 @@ module.exports = {
     getCharacterPerks: (req, res) => {
         const db = req.app.get('db');
 
-        db.GET_CLASS_PERKS([]).then((result) => {
+        const {classID} = req.params;
+
+        db.GET_CLASS_PERKS([classID]).then((result) => {
             res.status(200).send(result)
         }).catch((err) => {
             console.log(`Server error while attempting to retrieve perks: ${err}`);
