@@ -6,7 +6,30 @@ module.exports = {
 
         const {userID, characterName, characterClass} = req.body;
 
-        db.CREATE_NEW_CHARACTER([userID, characterClass, characterName]).then((result) => {
+        let checkmarks = {
+            "check1": false,
+            "check2": false,
+            "check3": false,
+            "check4": false,
+            "check5": false,
+            "check6": false,
+            "check7": false,
+            "check8": false,
+            "check9": false,
+            "check10": false,
+            "check11": false,
+            "check12": false,
+            "check13": false,
+            "check14": false,
+            "check15": false,
+            "check16": false,
+            "check17": false,
+            "check18": false
+        }
+
+        let perks = []
+
+        db.CREATE_NEW_CHARACTER([userID, characterClass, characterName, checkmarks, perks]).then((result) => {
             res.status(200).send(result);
         }).catch((err) => {
             console.log(`Server error while attempting to create new character: ${err}`);
