@@ -8,6 +8,7 @@ export class BrutePerks extends React.Component{
         this.state={}
     }
 
+
     render(){
         return (
             <div className='class-perk-container'>

@@ -2,8 +2,6 @@ import React from 'react';
 import BrutePerks from './BrutePerks';
 
 export default function PerkCard(props ) {
-    console.log(~~props.classID);
-
     let classID  = ~~props.classID;
     let perkCard = ''
     switch(classID) {
@@ -28,9 +26,6 @@ export default function PerkCard(props ) {
         default:
             break;
     }
-
-    console.log(perkCard);
-    
     return (
             <div>
                 {perkCard}

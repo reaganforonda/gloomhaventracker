@@ -33,9 +33,7 @@ export class CheckMarks extends React.Component {
         this.handleCheckSelect = this.handleCheckSelect.bind(this);
         this.handleSave = this.handleSave.bind(this);
     }
-
-    
-
+  
     handleCheckSelect(e) {
         this.setState({[e.target.name] : e.target.checked})
     }
