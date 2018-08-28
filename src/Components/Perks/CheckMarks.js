@@ -1,7 +1,8 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import axios from 'axios';
+import {loadSelectedCharacter} from '../../ducks/characterReducer';
 
 export class CheckMarks extends React.Component {
 
@@ -9,29 +10,31 @@ export class CheckMarks extends React.Component {
         super(props);
 
         this.state={
-            check1: false,
-            check2: false,
-            check3: false,
-            check4: false,
-            check5: false,
-            check6: false,
-            check7: false,
-            check8: false,
-            check9: false,
-            check10: false,
-            check11: false,
-            check12: false,
-            check13: false,
-            check14: false,
-            check15: false,
-            check16: false,
-            check17: false,
-            check18: false
+            check1: this.props.character.checkmarks.check1,
+            check2: this.props.character.checkmarks.check2,
+            check3: this.props.character.checkmarks.check3,
+            check4: this.props.character.checkmarks.check4,
+            check5: this.props.character.checkmarks.check5,
+            check6: this.props.character.checkmarks.check6,
+            check7: this.props.character.checkmarks.check7,
+            check8: this.props.character.checkmarks.check8,
+            check9: this.props.character.checkmarks.check9,
+            check10: this.props.character.checkmarks.check10,
+            check11: this.props.character.checkmarks.check11,
+            check12: this.props.character.checkmarks.check12,
+            check13: this.props.character.checkmarks.check13,
+            check14: this.props.character.checkmarks.check14,
+            check15: this.props.character.checkmarks.check15,
+            check16: this.props.character.checkmarks.check16,
+            check17: this.props.character.checkmarks.check17,
+            check18: this.props.character.checkmarks.check18
         }
 
         this.handleCheckSelect = this.handleCheckSelect.bind(this);
         this.handleSave = this.handleSave.bind(this);
     }
+
+    
 
     handleCheckSelect(e) {
         this.setState({[e.target.name] : e.target.checked})
@@ -61,7 +64,15 @@ export class CheckMarks extends React.Component {
             check18: this.state.check18
         }
 
-        console.log(checks);
+        let checkmarks = {
+            allChecks: checks
+        }
+
+        axios.put(`/api/character/goals/${this.props.character.character_id}`, checkmarks).then((result) => {
+            this.props.loadSelectedCharacter(this.props.character.character_id);
+        }).catch((err) => {
+            console.log(err)
+        })
     }
 
     render(){
@@ -109,8 +120,9 @@ export class CheckMarks extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.userReducer.state
+        user: state.userReducer.user,
+        character: state.characterReducer.character
     }
 }
 
-export default connect(mapStateToProps, {})(withRouter(CheckMarks));
+export default connect(mapStateToProps, {loadSelectedCharacter})(withRouter(CheckMarks));
