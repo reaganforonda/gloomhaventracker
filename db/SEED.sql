@@ -323,6 +323,11 @@ INSERT INTO perks
 VALUES
 (2, 'Ignore negative item effects');
 
+INSERT INTO perks
+(class_id, perk_description)
+VALUES
+(2, 'Ignore negative scenario effects');
+
 -- Spellweaver
 INSERT INTO perks
 (class_id, perk_description)
