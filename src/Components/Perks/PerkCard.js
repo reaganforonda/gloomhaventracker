@@ -1,5 +1,6 @@
 import React from 'react';
 import BrutePerks from './BrutePerks';
+import CragheartPerks from './CragheartPerks';
 
 export default function PerkCard(props ) {
     let classID  = ~~props.classID;
@@ -9,7 +10,7 @@ export default function PerkCard(props ) {
             perkCard = <BrutePerks/>
             break;
         case 2:
-            classID = 2
+            classID = <CragheartPerks/>
             break;
         case 3: 
             classID = 3
