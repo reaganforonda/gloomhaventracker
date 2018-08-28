@@ -58,7 +58,7 @@ CREATE TABLE characters (
     retired BOOLEAN,
     ITEMS JSON,
     checkmarks JSON,
-    perks TEXT []
+    perks JSON
 );
 
 CREATE TABLE perks (
