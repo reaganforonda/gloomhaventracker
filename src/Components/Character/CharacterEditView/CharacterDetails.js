@@ -6,6 +6,7 @@ import {loadSelectedCharacter, getAllCharacters} from '../../../ducks/characterR
 import axios from 'axios';
 import LoadingSpinner from '../../Loading/LoadingSpinner';
 
+
 export class CharacterDetails extends React.Component {
     constructor(props){
         super(props);
@@ -41,8 +42,7 @@ export class CharacterDetails extends React.Component {
             }
         }
     }
-
-
+    
     handleInputChange(e) {
         this.setState({[e.target.name] : e.target.value})
     };
