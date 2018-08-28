@@ -14,11 +14,14 @@ export class CharacterPerks extends React.Component{
     }
 
     static getDerivedStateFromProps(props, state){
-        if(props.character.class_id !== state.class_id) {
-            return {
-                class_id: props.character.class_id
+        if(props.character){
+            if(props.character.class_id !== state.class_id) {
+                return {
+                    class_id: props.character.class_id
+                }
             }
         }
+        
     }
 
     render(){
